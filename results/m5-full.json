@@ -1,0 +1,623 @@
+{
+  "environment": {
+    "chip": "Apple M5",
+    "machine": "arm64",
+    "macos": "27.0.1",
+    "python": "3.12.12",
+    "coremltools": "9.0",
+    "numpy": "2.5.4"
+  },
+  "configuration": {
+    "suite": "full",
+    "seed": 7,
+    "warmup": 3,
+    "repetitions": 7,
+    "quantization": "signed int8 weights, one fp16 scale per output channel, fp16 activations"
+  },
+  "results": [
+    {
+      "shape": {
+        "m": 1,
+        "k": 4096,
+        "n": 4096
+      },
+      "conversion_seconds": 0.2578197499969974,
+      "compute_units": {
+        "cpu_and_ne": {
+          "load_seconds": 0.0762471670168452,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "neural_engine",
+              "supported_devices": [
+                "cpu",
+                "neural_engine"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.0029392242431640625,
+          "relative_l2_error": 0.0002889603201765567,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.915375,
+            0.9765,
+            0.971875,
+            0.956417,
+            0.97725,
+            0.94075,
+            0.9695
+          ],
+          "median_ms": 0.9695,
+          "gflops": 0.034610038164002065,
+          "artifact_bytes": 33574587
+        },
+        "cpu_and_gpu": {
+          "load_seconds": 0.053044833010062575,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu",
+                "gpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.007202625274658203,
+          "relative_l2_error": 0.0013068385887891054,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.462375,
+            0.444542,
+            0.439791,
+            0.444417,
+            0.431583,
+            0.428959,
+            0.427959
+          ],
+          "median_ms": 0.439791,
+          "gflops": 0.07629631347617391,
+          "artifact_bytes": 33574587
+        },
+        "cpu_only": {
+          "load_seconds": 0.06516187498345971,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.007202625274658203,
+          "relative_l2_error": 0.0013068385887891054,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.471625,
+            0.467875,
+            0.45925,
+            0.448791,
+            0.4675,
+            0.456209,
+            0.448417
+          ],
+          "median_ms": 0.45925,
+          "gflops": 0.07306354273271638,
+          "artifact_bytes": 33574587
+        }
+      }
+    },
+    {
+      "shape": {
+        "m": 32,
+        "k": 4096,
+        "n": 4096
+      },
+      "conversion_seconds": 0.16492495802231133,
+      "compute_units": {
+        "cpu_and_ne": {
+          "load_seconds": 0.06519458402181044,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "neural_engine",
+              "supported_devices": [
+                "cpu",
+                "neural_engine"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.0038094520568847656,
+          "relative_l2_error": 0.00029487491701729596,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            1.013584,
+            1.042459,
+            1.049875,
+            1.035,
+            1.042584,
+            1.028,
+            1.040916
+          ],
+          "median_ms": 1.040916,
+          "gflops": 1.031535516794823,
+          "artifact_bytes": 33574589
+        },
+        "cpu_and_gpu": {
+          "load_seconds": 0.06705475004855543,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu",
+                "gpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.06452691555023193,
+          "relative_l2_error": 0.0065867905505001545,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.566083,
+            0.5685,
+            0.551167,
+            0.58925,
+            0.593958,
+            0.574458,
+            0.536083
+          ],
+          "median_ms": 0.5685,
+          "gflops": 1.8887279226033422,
+          "artifact_bytes": 33574589
+        },
+        "cpu_only": {
+          "load_seconds": 0.061125250009354204,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.06452691555023193,
+          "relative_l2_error": 0.0065867905505001545,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.573042,
+            0.556958,
+            0.55975,
+            0.5465,
+            0.549666,
+            0.54225,
+            0.541333
+          ],
+          "median_ms": 0.549666,
+          "gflops": 1.9534441351657188,
+          "artifact_bytes": 33574589
+        }
+      }
+    },
+    {
+      "shape": {
+        "m": 128,
+        "k": 4096,
+        "n": 4096
+      },
+      "conversion_seconds": 0.14215641596820205,
+      "compute_units": {
+        "cpu_and_ne": {
+          "load_seconds": 0.06278274999931455,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "neural_engine",
+              "supported_devices": [
+                "cpu",
+                "neural_engine"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.004292964935302734,
+          "relative_l2_error": 0.00029385898960754275,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            1.286291,
+            1.28175,
+            1.26325,
+            1.281792,
+            1.271625,
+            1.297542,
+            1.284834
+          ],
+          "median_ms": 1.281792,
+          "gflops": 3.3507521469942083,
+          "artifact_bytes": 33574597
+        },
+        "cpu_and_gpu": {
+          "load_seconds": 0.05400737497257069,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu",
+                "gpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.07790875434875488,
+          "relative_l2_error": 0.0065909395925700665,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            1.594375,
+            1.635917,
+            1.628583,
+            1.615,
+            1.589792,
+            1.582917,
+            1.605959
+          ],
+          "median_ms": 1.605959,
+          "gflops": 2.6743941134238174,
+          "artifact_bytes": 33574597
+        },
+        "cpu_only": {
+          "load_seconds": 0.06555454200133681,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.07790875434875488,
+          "relative_l2_error": 0.0065909395925700665,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            1.596458,
+            1.64675,
+            1.628875,
+            1.603084,
+            1.597458,
+            1.597708,
+            1.597917
+          ],
+          "median_ms": 1.597917,
+          "gflops": 2.687853809678475,
+          "artifact_bytes": 33574597
+        }
+      }
+    },
+    {
+      "shape": {
+        "m": 512,
+        "k": 4096,
+        "n": 4096
+      },
+      "conversion_seconds": 0.15009216702310368,
+      "compute_units": {
+        "cpu_and_ne": {
+          "load_seconds": 0.08328179200179875,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "neural_engine",
+              "supported_devices": [
+                "cpu",
+                "neural_engine"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.003982067108154297,
+          "relative_l2_error": 0.00029373998404480517,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            3.255958,
+            2.994417,
+            2.994458,
+            2.912166,
+            2.931625,
+            2.890625,
+            2.892834
+          ],
+          "median_ms": 2.931625,
+          "gflops": 5.860186478147785,
+          "artifact_bytes": 33574597
+        },
+        "cpu_and_gpu": {
+          "load_seconds": 0.0725359579664655,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu",
+                "gpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.09331893920898438,
+          "relative_l2_error": 0.006591357756406069,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            5.937625,
+            5.788084,
+            5.766,
+            5.850417,
+            6.084167,
+            5.869625,
+            5.749125
+          ],
+          "median_ms": 5.850417,
+          "gflops": 2.9365204538411533,
+          "artifact_bytes": 33574597
+        },
+        "cpu_only": {
+          "load_seconds": 0.06840695801656693,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.09331893920898438,
+          "relative_l2_error": 0.006591357756406069,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            5.791375,
+            5.814542,
+            5.817334,
+            5.730583,
+            5.709625,
+            5.745083,
+            5.772292
+          ],
+          "median_ms": 5.772292,
+          "gflops": 2.976264746135504,
+          "artifact_bytes": 33574597
+        }
+      }
+    }
+  ],
+  "summary": {
+    "relative_l2_tolerance": 0.02,
+    "headroom_gate": 1.2,
+    "correctness_gate": true,
+    "plan_reported_ne_prefill_gate": true,
+    "performance_gate": true,
+    "ne_prefill_shapes": [
+      [
+        1,
+        4096,
+        4096
+      ],
+      [
+        32,
+        4096,
+        4096
+      ],
+      [
+        128,
+        4096,
+        4096
+      ],
+      [
+        512,
+        4096,
+        4096
+      ]
+    ],
+    "best_prefill_candidate": {
+      "shape": {
+        "m": 512,
+        "k": 4096,
+        "n": 4096
+      },
+      "speedup": 1.9689735215111075
+    },
+    "spike_gate": true,
+    "scope_gate": "pending_tether_written_confirmation",
+    "interpretation": "Microbenchmark only. Not an end-to-end llama.cpp, energy, thermal, or bounty-acceptance result."
+  }
+}

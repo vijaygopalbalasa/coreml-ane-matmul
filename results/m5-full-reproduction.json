@@ -1,0 +1,671 @@
+{
+  "environment": {
+    "chip": "Apple M5",
+    "machine": "arm64",
+    "macos": "27.0.1",
+    "python": "3.12.12",
+    "coremltools": "9.0",
+    "numpy": "2.5.4"
+  },
+  "configuration": {
+    "suite": "full",
+    "seed": 107,
+    "warmup": 3,
+    "repetitions": 11,
+    "quantization": "signed int8 weights, one fp16 scale per output channel, fp16 activations"
+  },
+  "results": [
+    {
+      "shape": {
+        "m": 1,
+        "k": 4096,
+        "n": 4096
+      },
+      "conversion_seconds": 0.2380053749657236,
+      "compute_units": {
+        "cpu_and_ne": {
+          "load_seconds": 0.07282624999061227,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "neural_engine",
+              "supported_devices": [
+                "cpu",
+                "neural_engine"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.0023050308227539062,
+          "relative_l2_error": 0.00029423896921798587,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.957875,
+            0.982167,
+            0.955084,
+            0.936042,
+            0.919667,
+            0.933917,
+            0.967583,
+            0.9685,
+            0.957875,
+            0.924458,
+            0.983833
+          ],
+          "median_ms": 0.957875,
+          "gflops": 0.03503007386141198,
+          "artifact_bytes": 33574587
+        },
+        "cpu_and_gpu": {
+          "load_seconds": 0.05067116697318852,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu",
+                "gpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.006005764007568359,
+          "relative_l2_error": 0.0013573976466432214,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.458417,
+            0.472041,
+            0.4845,
+            0.521416,
+            0.550542,
+            0.625417,
+            0.543709,
+            0.490541,
+            0.560834,
+            0.557708,
+            0.532833
+          ],
+          "median_ms": 0.532833,
+          "gflops": 0.0629736371433451,
+          "artifact_bytes": 33574587
+        },
+        "cpu_only": {
+          "load_seconds": 0.06191891600610688,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.006005764007568359,
+          "relative_l2_error": 0.0013573976466432214,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.47075,
+            0.458667,
+            0.460125,
+            0.4395,
+            0.43925,
+            0.456458,
+            0.445,
+            0.433833,
+            0.430875,
+            0.427333,
+            0.436125
+          ],
+          "median_ms": 0.4395,
+          "gflops": 0.07634683048919226,
+          "artifact_bytes": 33574587
+        }
+      }
+    },
+    {
+      "shape": {
+        "m": 32,
+        "k": 4096,
+        "n": 4096
+      },
+      "conversion_seconds": 0.16075445798924193,
+      "compute_units": {
+        "cpu_and_ne": {
+          "load_seconds": 0.060674042033497244,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "neural_engine",
+              "supported_devices": [
+                "cpu",
+                "neural_engine"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.003612995147705078,
+          "relative_l2_error": 0.0002918019308708608,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            1.057375,
+            1.047708,
+            1.026459,
+            1.050958,
+            1.017833,
+            1.035875,
+            0.981833,
+            1.078625,
+            0.97025,
+            1.043667,
+            1.022417
+          ],
+          "median_ms": 1.035875,
+          "gflops": 1.0365553990587666,
+          "artifact_bytes": 33574589
+        },
+        "cpu_and_gpu": {
+          "load_seconds": 0.056516541983000934,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu",
+                "gpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.06509733200073242,
+          "relative_l2_error": 0.006575590465217829,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.558541,
+            0.562167,
+            0.5685,
+            0.543084,
+            0.540166,
+            0.536334,
+            0.539125,
+            0.536958,
+            0.53575,
+            0.588417,
+            0.618125
+          ],
+          "median_ms": 0.543084,
+          "gflops": 1.9771192375396809,
+          "artifact_bytes": 33574589
+        },
+        "cpu_only": {
+          "load_seconds": 0.06054887501522899,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.06509733200073242,
+          "relative_l2_error": 0.006575590465217829,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            0.550625,
+            0.543583,
+            0.555333,
+            0.551625,
+            0.549875,
+            0.536667,
+            0.536917,
+            0.538334,
+            0.534334,
+            0.532542,
+            0.534292
+          ],
+          "median_ms": 0.538334,
+          "gflops": 1.9945643856787794,
+          "artifact_bytes": 33574589
+        }
+      }
+    },
+    {
+      "shape": {
+        "m": 128,
+        "k": 4096,
+        "n": 4096
+      },
+      "conversion_seconds": 0.1326550419908017,
+      "compute_units": {
+        "cpu_and_ne": {
+          "load_seconds": 0.061749666987452656,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "neural_engine",
+              "supported_devices": [
+                "cpu",
+                "neural_engine"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.0035152435302734375,
+          "relative_l2_error": 0.0002933773794211447,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            1.269958,
+            1.286792,
+            1.286042,
+            1.2475,
+            1.301667,
+            1.248792,
+            1.278,
+            1.261208,
+            1.292875,
+            1.279625,
+            1.252792
+          ],
+          "median_ms": 1.278,
+          "gflops": 3.360694284820031,
+          "artifact_bytes": 33574597
+        },
+        "cpu_and_gpu": {
+          "load_seconds": 0.0521712499903515,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu",
+                "gpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.07505331933498383,
+          "relative_l2_error": 0.006596976891160011,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            1.615333,
+            1.641958,
+            1.660541,
+            1.603125,
+            1.596167,
+            1.580042,
+            1.597292,
+            1.669208,
+            1.682625,
+            1.813041,
+            1.626042
+          ],
+          "median_ms": 1.626042,
+          "gflops": 2.6413630742625345,
+          "artifact_bytes": 33574597
+        },
+        "cpu_only": {
+          "load_seconds": 0.05980870797066018,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.07505331933498383,
+          "relative_l2_error": 0.006596976891160011,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            1.591833,
+            1.654583,
+            1.628125,
+            1.606459,
+            1.607291,
+            1.611292,
+            1.723958,
+            1.668084,
+            1.621,
+            1.60025,
+            1.593167
+          ],
+          "median_ms": 1.611292,
+          "gflops": 2.665542493849656,
+          "artifact_bytes": 33574597
+        }
+      }
+    },
+    {
+      "shape": {
+        "m": 512,
+        "k": 4096,
+        "n": 4096
+      },
+      "conversion_seconds": 0.15012712497264147,
+      "compute_units": {
+        "cpu_and_ne": {
+          "load_seconds": 0.07692462496925145,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "neural_engine",
+              "supported_devices": [
+                "cpu",
+                "neural_engine"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.003968238830566406,
+          "relative_l2_error": 0.00029340345645323396,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            3.704375,
+            2.909167,
+            2.912166,
+            2.877125,
+            2.897917,
+            2.939958,
+            2.920708,
+            2.911625,
+            2.897334,
+            2.86575,
+            2.898208
+          ],
+          "median_ms": 2.909167,
+          "gflops": 5.905425568212482,
+          "artifact_bytes": 33574597
+        },
+        "cpu_and_gpu": {
+          "load_seconds": 0.0631775829824619,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu",
+                "gpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.08576059341430664,
+          "relative_l2_error": 0.00659168278798461,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            6.384583,
+            5.817959,
+            5.769333,
+            5.780333,
+            5.817583,
+            5.74725,
+            5.791958,
+            5.756959,
+            5.703875,
+            5.725209,
+            5.757333
+          ],
+          "median_ms": 5.769333,
+          "gflops": 2.9777912254328185,
+          "artifact_bytes": 33574597
+        },
+        "cpu_only": {
+          "load_seconds": 0.05668929102830589,
+          "operations": [
+            {
+              "operation": "ios19.constexpr_blockwise_shift_scale",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "const",
+              "preferred_device": "not_reported",
+              "supported_devices": []
+            },
+            {
+              "operation": "ios18.matmul",
+              "preferred_device": "cpu",
+              "supported_devices": [
+                "cpu"
+              ]
+            }
+          ],
+          "output_dtype": "float32",
+          "max_abs_error": 0.08576059341430664,
+          "relative_l2_error": 0.00659168278798461,
+          "correct_within_tolerance": true,
+          "timings_ms": [
+            5.726167,
+            5.7845,
+            5.715625,
+            5.848958,
+            5.787042,
+            5.765834,
+            5.714709,
+            5.75575,
+            5.751583,
+            5.7315,
+            5.779459
+          ],
+          "median_ms": 5.75575,
+          "gflops": 2.984818517829996,
+          "artifact_bytes": 33574597
+        }
+      }
+    }
+  ],
+  "summary": {
+    "relative_l2_tolerance": 0.02,
+    "headroom_gate": 1.2,
+    "correctness_gate": true,
+    "plan_reported_ne_prefill_gate": true,
+    "performance_gate": true,
+    "ne_prefill_shapes": [
+      [
+        1,
+        4096,
+        4096
+      ],
+      [
+        32,
+        4096,
+        4096
+      ],
+      [
+        128,
+        4096,
+        4096
+      ],
+      [
+        512,
+        4096,
+        4096
+      ]
+    ],
+    "best_prefill_candidate": {
+      "shape": {
+        "m": 512,
+        "k": 4096,
+        "n": 4096
+      },
+      "speedup": 1.9784873126912275
+    },
+    "spike_gate": true,
+    "scope_gate": "pending_tether_written_confirmation",
+    "interpretation": "Microbenchmark only. Not an end-to-end llama.cpp, energy, thermal, or bounty-acceptance result."
+  }
+}
